@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Reaction\n"
+"POT-Creation-Date: 2024-11-24 14:10-0300\n"
+"PO-Revision-Date: 2024-11-24 14:10-0300\n"
+"Last-Translator: \n"
+"Language-Team: Cau Guanabara\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .git\n"
+
+#: reaction.php:68
+msgid "Please inform your name"
+msgstr "Por favor informe seu nome"
+
+#: reaction.php:69
+msgid "To react you must inform your name"
+msgstr "Para reagir você precisa informar seu nome"
+
+#: reaction.php:149
+msgid "No clicks yet"
+msgstr "Nenhum click ainda"
+
+#: reaction.php:188
+msgid "Configuration successfully saved!"
+msgstr "Configurações salvas com sucesso!"
+
+#: reaction.php:193
+msgid "Reaction options"
+msgstr "Opções Reaction"
+
+#: reaction.php:198
+msgid "Publication types"
+msgstr "Tipos de publicação"
+
+#: reaction.php:209
+msgid "Position in posts"
+msgstr "Posição nos posts"
+
+#: reaction.php:212
+msgid "Before content"
+msgstr "Antes do conteúdo"
+
+#: reaction.php:215
+msgid "After content"
+msgstr "Depois do conteúdo"
+
+#: reaction.php:220
+msgid "Position in comments"
+msgstr "Posição nos comentários"
+
+#: reaction.php:223
+msgid "Before comment"
+msgstr "Antes do comentário"
+
+#: reaction.php:226
+msgid "After comment"
+msgstr "Depois do comentário"
+
+#: reaction.php:231
+msgid "Reaction types"
+msgstr "Reações"
+
+#: reaction.php:244
+msgid "Reactions order"
+msgstr "Ordem das reações"
+
+#~ msgid "After"
+#~ msgstr "Depois"

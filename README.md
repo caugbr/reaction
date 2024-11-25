@@ -1,2 +1,3 @@
-# reaction
-Links de reação a posts e comentários no Wordpress
+﻿# Reaction
+
+Reaction links to posts and comments in Wordpress

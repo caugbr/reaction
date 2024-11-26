@@ -26,6 +26,7 @@ class Reaction {
     public $post_position = '';
     public $comment_position = '';
     public $set = '';
+    public $sets = [];
     
     public function __construct() {
         load_plugin_textdomain('reaction', false, dirname(plugin_basename(__FILE__)) . '/langs');
@@ -38,6 +39,7 @@ class Reaction {
 
         $this->get_options();
         $this->define_set();
+        $this->get_sets();
 
         add_filter('the_content', [$this, 'add_to_post'], 10, 2);
         if (in_array('comment', $this->types)) {
@@ -55,6 +57,10 @@ class Reaction {
         $this->post_position = get_option('reaction_post_position', 'before');
         $this->comment_position = get_option('reaction_comment_position', 'before');
         $this->active = get_option('reaction_reactions', []);
+        $this->set = get_option('reaction_image_set', '');
+        if (!empty($this->set)) {
+            $this->define_set($this->set);
+        }
     }
 
     /**
@@ -98,7 +104,7 @@ class Reaction {
         $img_names = [];
         $ext = '';
         foreach ($files as $file) {
-            if ($file[0] === '.') {
+            if ($file[0] === '.' || is_dir($img_base . $file)) {
                 continue;
             }
             $fileInfo = pathinfo($file);
@@ -122,6 +128,23 @@ class Reaction {
             $this->set = $set_name . '/';
         }
         $this->get_reactions();
+    }
+
+    /**
+     * Get image sets
+     *
+     * @return array
+     */
+    public function get_sets() {
+        $img_base = REACTION_PATH . 'assets/img/';
+        $files = scandir($img_base);
+        $sets = [];
+        foreach ($files as $file) {
+            if ($file[0] != '.' && is_dir($img_base . $file)) {
+                $sets[] = $file;
+            }
+        }
+        return $this->sets = $sets;
     }
 
     /**
@@ -182,7 +205,7 @@ class Reaction {
      * @return void
      */
     public function img($imgid) {
-        $img_base = REACTION_URL . 'assets/img/';
+        $img_base = REACTION_URL . 'assets/img/' . $this->set;
         $url = "{$img_base}{$imgid}.{$this->extension}";
         return "<img src='{$url}'>";
     }
@@ -252,9 +275,10 @@ class Reaction {
         if (isset($_POST['reaction_save'])) {
             check_admin_referer('reaction_nonce_action', 'reaction_nonce_field');
             update_option('reaction_types', $_POST['types']);
-            update_option('reaction_reactions', $_POST['active_order']);
+            update_option('reaction_reactions', $_POST['active_order'] ?? []);
             update_option('reaction_post_position', $_POST['post_position']);
             update_option('reaction_comment_position', $_POST['comment_position']);
+            update_option('reaction_image_set', $_POST['image_set']);
             $msg = __('Configuration successfully saved!', 'reaction');
         }
         $this->get_options();
@@ -298,12 +322,23 @@ class Reaction {
                 </select>
             </div>
             <div class="line">
+                <h4><?php _e('Image set', 'reaction'); ?></h4>
+                <div class="sets-list">
+                    <select name="image_set" id="image_set">
+                        <option value=""><?php _e("Default", 'reaction'); ?></option>
+                        <?php foreach ($this->sets as $set) { ?>
+                            <option value="<?php print $set; ?>"<?php if ($this->set == $set . '/') print ' selected'; ?>><?php print $set; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+            </div>
+            <div class="line">
                 <h4><?php _e('Reaction types', 'reaction'); ?></h4>
                 <div class="reaction-list">
                     <?php foreach ($this->reactions as $imgid) { ?>
                         <label>
                             <input type="checkbox" name="reactions[]" id="reactions_<?php print $imgid; ?>" value="<?php print $imgid; ?>" <?php 
-                                if (in_array($imgid, $this->active)) { print ' checked'; } 
+                                if (is_array($this->active) && in_array($imgid, $this->active)) { print ' checked'; } 
                             ?>> 
                             <?php print $this->img($imgid); ?>
                         </label>
@@ -314,14 +349,18 @@ class Reaction {
                 <h4><?php _e('Reactions order', 'reaction'); ?></h4>
                 <div class="reactions-order">
                     <?php 
-                    foreach ($this->active as $imgid) {
-                        print '<label>' . $this->img($imgid) . '</label>';
+                    if (is_array($this->active)) {
+                        foreach ($this->active as $imgid) {
+                            print '<label>' . $this->img($imgid) . '</label>';
+                        }
                     }
                     ?>
                 </div>
                 <div class="reactions-order-inputs">
-                    <?php foreach ($this->active as $imgid) { ?>
-                        <input type="hidden" name="active_order[]" id="active_order_<?php print $imgid; ?>" value="<?php print $imgid; ?>">
+                    <?php if (is_array($this->active)) { ?>
+                        <?php foreach ($this->active as $imgid) { ?>
+                            <input type="hidden" name="active_order[]" id="active_order_<?php print $imgid; ?>" value="<?php print $imgid; ?>">
+                        <?php } ?>
                     <?php } ?>
                 </div>
             </div>

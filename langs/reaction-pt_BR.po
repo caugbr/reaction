@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Reaction\n"
-"POT-Creation-Date: 2024-11-24 14:10-0300\n"
-"PO-Revision-Date: 2024-11-24 14:10-0300\n"
+"POT-Creation-Date: 2024-11-26 21:20-0300\n"
+"PO-Revision-Date: 2024-11-26 21:25-0300\n"
 "Last-Translator: \n"
 "Language-Team: Cau Guanabara\n"
 "Language: pt_BR\n"
@@ -17,61 +17,93 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: .git\n"
 
-#: reaction.php:68
+#: reaction.php:90
 msgid "Please inform your name"
 msgstr "Por favor informe seu nome"
 
-#: reaction.php:69
+#: reaction.php:91
 msgid "To react you must inform your name"
 msgstr "Para reagir você precisa informar seu nome"
 
-#: reaction.php:149
+#: reaction.php:227
 msgid "No clicks yet"
 msgstr "Nenhum click ainda"
 
-#: reaction.php:188
+#: reaction.php:282
 msgid "Configuration successfully saved!"
 msgstr "Configurações salvas com sucesso!"
 
-#: reaction.php:193
+#: reaction.php:287
 msgid "Reaction options"
-msgstr "Opções Reaction"
+msgstr "Opções do Reaction"
 
-#: reaction.php:198
+#: reaction.php:292
 msgid "Publication types"
 msgstr "Tipos de publicação"
 
-#: reaction.php:209
+#: reaction.php:302
+msgid "Select the post types to add the reaction links."
+msgstr "Selecione os tipos de publicação para adicionar os links de reação."
+
+#: reaction.php:306
 msgid "Position in posts"
 msgstr "Posição nos posts"
 
-#: reaction.php:212
+#: reaction.php:309
 msgid "Before content"
 msgstr "Antes do conteúdo"
 
-#: reaction.php:215
+#: reaction.php:312
 msgid "After content"
 msgstr "Depois do conteúdo"
 
-#: reaction.php:220
+#: reaction.php:316
+msgid "Define the position to reaction links, relative to the post content."
+msgstr "Defina a posição dos links em relação ao conteúdo do post."
+
+#: reaction.php:320
 msgid "Position in comments"
 msgstr "Posição nos comentários"
 
-#: reaction.php:223
+#: reaction.php:323
 msgid "Before comment"
 msgstr "Antes do comentário"
 
-#: reaction.php:226
+#: reaction.php:326
 msgid "After comment"
 msgstr "Depois do comentário"
 
-#: reaction.php:231
+#: reaction.php:330
+msgid "Define the position to reaction links, relative to comment text."
+msgstr "Defina a posição dos links em relação ao texto do comentário."
+
+#: reaction.php:334
+msgid "Image set"
+msgstr "Conjunto de imagens"
+
+#: reaction.php:337
+msgid "Default"
+msgstr "Padrão"
+
+#: reaction.php:344
+msgid "If you make any change here, the two fields below will be cleared."
+msgstr "Se você fizer mudanças aqui, os dois campos abaixo serão limpos."
+
+#: reaction.php:348
 msgid "Reaction types"
 msgstr "Reações"
 
-#: reaction.php:244
+#: reaction.php:360
+msgid "Mark the reactions you want to use."
+msgstr "Marque as reações que você deseja usar."
+
+#: reaction.php:364
 msgid "Reactions order"
 msgstr "Ordem das reações"
+
+#: reaction.php:375
+msgid "Drag and drop to organize the order of reaction links."
+msgstr "Arraste e solte para definir a ordem das reações."
 
 #~ msgid "After"
 #~ msgstr "Depois"

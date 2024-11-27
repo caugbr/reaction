@@ -298,6 +298,9 @@ class Reaction {
                         <?php _e($ptype, 'reaction'); ?>
                     </label>
                 <?php } ?>
+                <p class="description">
+                    <?php _e("Select the post types to add the reaction links.", 'reaction'); ?>
+                </p>
             </div>
             <div class="line" id="post_pos">
                 <h4><?php _e('Position in posts', 'reaction'); ?></h4>
@@ -309,6 +312,9 @@ class Reaction {
                         <?php _e("After content", 'reaction'); ?>
                     </option>
                 </select>
+                <p class="description">
+                    <?php _e("Define the position to reaction links, relative to the post content.", 'reaction'); ?>
+                </p>
             </div>
             <div class="line" id="comment_pos">
                 <h4><?php _e('Position in comments', 'reaction'); ?></h4>
@@ -320,6 +326,9 @@ class Reaction {
                         <?php _e("After comment", 'reaction'); ?>
                     </option>
                 </select>
+                <p class="description">
+                    <?php _e("Define the position to reaction links, relative to comment text.", 'reaction'); ?>
+                </p>
             </div>
             <div class="line">
                 <h4><?php _e('Image set', 'reaction'); ?></h4>
@@ -331,6 +340,9 @@ class Reaction {
                         <?php } ?>
                     </select>
                 </div>
+                <p class="description">
+                    <?php _e('If you make any change here, the two fields below will be cleared.', 'reaction'); ?>
+                </p>
             </div>
             <div class="line">
                 <h4><?php _e('Reaction types', 'reaction'); ?></h4>
@@ -344,6 +356,9 @@ class Reaction {
                         </label>
                     <?php } ?>
                 </div>
+                <p class="description">
+                    <?php _e("Mark the reactions you want to use.", 'reaction'); ?>
+                </p>
             </div>
             <div class="line">
                 <h4><?php _e('Reactions order', 'reaction'); ?></h4>
@@ -356,6 +371,9 @@ class Reaction {
                     }
                     ?>
                 </div>
+                <p class="description">
+                    <?php _e("Drag and drop to organize the order of reaction links.", 'reaction'); ?>
+                </p>
                 <div class="reactions-order-inputs">
                     <?php if (is_array($this->active)) { ?>
                         <?php foreach ($this->active as $imgid) { ?>

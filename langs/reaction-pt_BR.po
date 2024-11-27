@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Reaction\n"
-"POT-Creation-Date: 2024-11-26 21:20-0300\n"
-"PO-Revision-Date: 2024-11-26 21:25-0300\n"
+"POT-Creation-Date: 2024-11-26 21:35-0300\n"
+"PO-Revision-Date: 2024-11-26 21:35-0300\n"
 "Last-Translator: \n"
 "Language-Team: Cau Guanabara\n"
 "Language: pt_BR\n"
@@ -74,34 +74,34 @@ msgid "After comment"
 msgstr "Depois do comentário"
 
 #: reaction.php:330
-msgid "Define the position to reaction links, relative to comment text."
+msgid "Define the position to reaction links, relative to the comment text."
 msgstr "Defina a posição dos links em relação ao texto do comentário."
 
-#: reaction.php:334
+#: reaction.php:335
 msgid "Image set"
 msgstr "Conjunto de imagens"
 
-#: reaction.php:337
+#: reaction.php:338
 msgid "Default"
 msgstr "Padrão"
 
-#: reaction.php:344
+#: reaction.php:345
 msgid "If you make any change here, the two fields below will be cleared."
 msgstr "Se você fizer mudanças aqui, os dois campos abaixo serão limpos."
 
-#: reaction.php:348
+#: reaction.php:350
 msgid "Reaction types"
 msgstr "Reações"
 
-#: reaction.php:360
+#: reaction.php:362
 msgid "Mark the reactions you want to use."
 msgstr "Marque as reações que você deseja usar."
 
-#: reaction.php:364
+#: reaction.php:366
 msgid "Reactions order"
 msgstr "Ordem das reações"
 
-#: reaction.php:375
+#: reaction.php:377
 msgid "Drag and drop to organize the order of reaction links."
 msgstr "Arraste e solte para definir a ordem das reações."
 

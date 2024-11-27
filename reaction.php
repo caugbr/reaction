@@ -327,9 +327,10 @@ class Reaction {
                     </option>
                 </select>
                 <p class="description">
-                    <?php _e("Define the position to reaction links, relative to comment text.", 'reaction'); ?>
+                    <?php _e("Define the position to reaction links, relative to the comment text.", 'reaction'); ?>
                 </p>
             </div>
+            <?php if (is_array($this->sets) && count($this->sets)) { ?>
             <div class="line">
                 <h4><?php _e('Image set', 'reaction'); ?></h4>
                 <div class="sets-list">
@@ -344,6 +345,7 @@ class Reaction {
                     <?php _e('If you make any change here, the two fields below will be cleared.', 'reaction'); ?>
                 </p>
             </div>
+            <?php } ?>
             <div class="line">
                 <h4><?php _e('Reaction types', 'reaction'); ?></h4>
                 <div class="reaction-list">

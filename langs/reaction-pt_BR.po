@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Reaction\n"
 "POT-Creation-Date: 2024-11-26 21:35-0300\n"
-"PO-Revision-Date: 2024-11-26 21:35-0300\n"
+"PO-Revision-Date: 2024-11-26 22:05-0300\n"
 "Last-Translator: \n"
 "Language-Team: Cau Guanabara\n"
 "Language: pt_BR\n"
@@ -16,6 +16,10 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: .git\n"
+
+#: reaction.php:4
+msgid "Add reaction links to posts and comments"
+msgstr "Adicione links de reação em posts e comentários"
 
 #: reaction.php:90
 msgid "Please inform your name"
